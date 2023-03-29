@@ -3,7 +3,9 @@ package com.michellerodrigues.booksstoremanager.entity;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import jakarta.persistence.*;
 import jdk.jfr.DataAmount;
+import lombok.Builder;
 import lombok.Data;
+@Builder
 
 @Data
 
