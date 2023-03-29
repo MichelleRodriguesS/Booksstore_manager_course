@@ -19,12 +19,9 @@ import javax.validation.Valid;
 
 
 public class BookController {
-    private BookService bookService;
 
     @Autowired
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
-    }
+    private BookService bookService;
 
     @PostMapping
     public MessageResponseDTO create(@RequestBody @Valid BookDTO bookDTO) {

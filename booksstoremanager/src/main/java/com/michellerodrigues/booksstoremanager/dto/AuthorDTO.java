@@ -5,16 +5,13 @@ package com.michellerodrigues.booksstoremanager.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Getter
+@Setter
 public class AuthorDTO {
     @NotBlank
     @Size(max = 200)
