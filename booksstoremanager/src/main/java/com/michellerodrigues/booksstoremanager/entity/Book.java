@@ -6,11 +6,8 @@ import jdk.jfr.DataAmount;
 import lombok.Builder;
 import lombok.Data;
 @Builder
-
 @Data
-
 @Entity
-
 
 
 public class Book {
@@ -29,6 +26,6 @@ public class Book {
     private String publisherName;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE} )
-    @JoinColumn(nullable = false, name = "author_id")
+    @JoinColumn( name = "author_id")
     private Author author;
 }

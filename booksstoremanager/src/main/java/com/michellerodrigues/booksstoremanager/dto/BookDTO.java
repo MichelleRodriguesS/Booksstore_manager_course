@@ -16,7 +16,6 @@ import javax.validation.constraints.NotNull;
 public class BookDTO {
     private Long id;
 
-
     // Not blank indica que não pode ser vazio.
     @NotBlank
     @Size(max = 200)
@@ -26,7 +25,6 @@ public class BookDTO {
     private Integer pages;
     @NotNull
     private Integer chapters;
-
 
     @Pattern(regexp ="(?:ISBN(?:-10)?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$)[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$",
             message = "ISBN format must be a valid format")
