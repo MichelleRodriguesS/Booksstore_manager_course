@@ -12,16 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/books")
+@RequestMapping("api/v1/books")
 
 
 public class BookController {
-    private BookService bookService;
 
     @Autowired
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
-    }
+    private BookService bookService;
+
 
     @PostMapping
     public MessageResponseDTO create(@RequestBody @Valid BookDTO bookDTO) {
