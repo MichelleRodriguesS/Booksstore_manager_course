@@ -13,12 +13,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookService {
 
-    @Autowired
-    private BookRepository bookRepository;
-    private final BookMapper bookMapper = BookMapper.INSTANCE;
+    
 
-
-
+        Book bookToSave = new Book(bookDTO);
 
     
     public MessageResponseDTO create(BookDTO bookDTO) {

@@ -20,7 +20,6 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-
     @PostMapping
     public MessageResponseDTO create(@RequestBody @Valid BookDTO bookDTO) {
         return bookService.create(bookDTO);

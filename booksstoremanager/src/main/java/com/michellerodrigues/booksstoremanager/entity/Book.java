@@ -1,20 +1,20 @@
 package com.michellerodrigues.booksstoremanager.entity;
 
-
 import com.michellerodrigues.booksstoremanager.dto.BookDTO;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.*;
 
 @Builder
 @Getter
 @Setter
 @Entity
-
-
-
+@Getter
+@Setter
+@NoArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,9 +36,5 @@ public class Book {
         this.chapters = bookDTO.getChapters();
         this.isbn = bookDTO.getIsbn();
         this.publisherName = bookDTO.getPublisherName();
-    }
-
-
-    private Author author;
 }
 
