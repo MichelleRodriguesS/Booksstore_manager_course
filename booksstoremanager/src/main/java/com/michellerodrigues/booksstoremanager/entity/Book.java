@@ -1,18 +1,21 @@
 package com.michellerodrigues.booksstoremanager.entity;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.michellerodrigues.booksstoremanager.dto.AuthorDTO;
+import com.michellerodrigues.booksstoremanager.dto.BookDTO;
 import jakarta.persistence.*;
 import jdk.jfr.DataAmount;
-import lombok.Builder;
-import lombok.Data;
-@Builder
+import lombok.*;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Data
 
 @Entity
-
-
-
+@Getter
+@Setter
+@NoArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +31,16 @@ public class Book {
     @Column(name = "publisher_name", nullable = false, unique = true)
     private String publisherName;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE} )
+    public Book(BookDTO bookDTO){
+        //this.author = bookDTO.getAuthor();
+        this.name = bookDTO.getName();
+        this.pages = bookDTO.getPages();
+        this.chapters = bookDTO.getChapters();
+        this.isbn = bookDTO.getIsbn();
+        this.publisherName = bookDTO.getPublisherName();
+    }
+
+    /*@ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE} )
     @JoinColumn(nullable = false, name = "author_id")
-    private Author author;
+    private @Valid @NotNull AuthorDTO author;*/
 }

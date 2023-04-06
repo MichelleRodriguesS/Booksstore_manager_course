@@ -12,22 +12,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class BookService {
-    private BookRepository bookRepository;
 
     @Autowired
-    public BookService(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
+    private BookRepository bookRepository;
 
     public MessageResponseDTO create(BookDTO bookDTO) {
-        Book bookToSave = Book.builder().build();
 
-
+        Book bookToSave = new Book(bookDTO);
 
         Book savedBook = bookRepository.save(bookToSave);
-        // data transfer object
-        return MessageResponseDTO.builder().message("Book created with ID:  " + savedBook.getId())
-                .build();
+
+        return MessageResponseDTO.builder().message("Book created with ID:  " + savedBook.getId()).build();
 
     }
 
