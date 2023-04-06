@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/booksstoremanager.iml" filepath="$PROJECT_DIR$/.idea/booksstoremanager.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/booksstoremanager.booksstoremanager.main.iml" filepath="$PROJECT_DIR$/.idea/modules/booksstoremanager.booksstoremanager.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/booksstoremanager.booksstoremanager.test.iml" filepath="$PROJECT_DIR$/.idea/modules/booksstoremanager.booksstoremanager.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/booksstoremanager.booksstoremanager.test~2.iml" filepath="$PROJECT_DIR$/.idea/modules/booksstoremanager.booksstoremanager.test~2.iml" />
     </modules>
   </component>
 </project>
